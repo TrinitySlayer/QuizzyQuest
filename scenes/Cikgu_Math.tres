@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dvfn6jcsvw2nj"]
+
+[ext_resource type="Script" path="res://scenes/BaseEnemy.gd" id="1_d8ulr"]
+[ext_resource type="Texture2D" uid="uid://cgvjq4xgnup27" path="res://art/characters/Shadow1.png" id="2_jo0w8"]
+
+[resource]
+script = ExtResource("1_d8ulr")
+name = "Cikgu Math"
+texture = ExtResource("2_jo0w8")
+health = 1
+damage = 1

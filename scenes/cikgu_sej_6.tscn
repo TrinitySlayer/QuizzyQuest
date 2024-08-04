@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://cbop63q1cm36e"]
+
+[ext_resource type="Script" path="res://scenes/CikguSej6.gd" id="1_558kv"]
+[ext_resource type="Texture2D" uid="uid://bifcwf4jfiwf5" path="res://art/characters/Npc10.png" id="2_bc0ea"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tk6bv"]
+atlas = ExtResource("2_bc0ea")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pywx8"]
+atlas = ExtResource("2_bc0ea")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyo5r"]
+atlas = ExtResource("2_bc0ea")
+region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3xmd"]
+atlas = ExtResource("2_bc0ea")
+region = Rect2(320, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ord6"]
+atlas = ExtResource("2_bc0ea")
+region = Rect2(384, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s8nvp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tk6bv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pywx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyo5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3xmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ord6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_osk3k"]
+
+[node name="CikguSej6" type="CharacterBody2D"]
+script = ExtResource("1_558kv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(0.460938, 0.511719)
+sprite_frames = SubResource("SpriteFrames_s8nvp")
+animation = &"idle"
+frame_progress = 0.539453
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 5
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_osk3k")

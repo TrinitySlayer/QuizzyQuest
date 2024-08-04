@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnp7xh656lajj"]
+
+[ext_resource type="Script" path="res://butterfly_yellow.gd" id="1_jslu4"]
+[ext_resource type="Texture2D" uid="uid://datirr7l24sod" path="res://art/characters/d9eesr6-f88907ca-d182-4ba5-9733-e900beb123ea.png" id="2_fqd2j"]
+[ext_resource type="PackedScene" uid="uid://cnvnddlolw4qx" path="res://scenes/wander_2.tscn" id="3_g1ay1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etpxd"]
+atlas = ExtResource("2_fqd2j")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vc0w1"]
+atlas = ExtResource("2_fqd2j")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lagm"]
+atlas = ExtResource("2_fqd2j")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rxiqp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etpxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vc0w1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lagm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[node name="butterfly_yellow" type="CharacterBody2D" node_paths=PackedStringArray("wander_direction")]
+script = ExtResource("1_jslu4")
+wander_direction = NodePath("Wander2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.453125, 0.46875)
+sprite_frames = SubResource("SpriteFrames_rxiqp")
+animation = &"idle"
+offset = Vector2(0, -5)
+
+[node name="Wander2" parent="." instance=ExtResource("3_g1ay1")]
+group_name = "SecondButterfly"

@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://1jw5lx7eeue"]
+
+[ext_resource type="PackedScene" uid="uid://dposewyl4pohq" path="res://leaderboard/player.tscn" id="2_5xvo0"]
+[ext_resource type="Texture2D" uid="uid://bpeecjkymv5cp" path="res://assets/Action RPG Resources/World/background_nightSky.jpg" id="3_dsvgx"]
+[ext_resource type="Shader" path="res://leaderboard/shader.gdshader" id="3_xgq5o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y4erd"]
+shader = ExtResource("3_xgq5o")
+
+[sub_resource type="Theme" id="Theme_lclio"]
+default_font_size = 25
+
+[sub_resource type="Theme" id="Theme_w6qwf"]
+default_base_scale = 5.0
+
+[sub_resource type="SystemFont" id="SystemFont_46jfh"]
+font_names = PackedStringArray("Monospace")
+
+[node name="leaderboard_Screen" type="Control"]
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_y4erd")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_dsvgx")
+expand_mode = 2
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+offset_left = 85.0
+offset_top = 40.0
+offset_right = 403.0
+offset_bottom = 244.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 6.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="playerlist" type="VBoxContainer" parent="Panel2/ScrollContainer"]
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+size_flags_stretch_ratio = 7.98
+theme = SubResource("Theme_lclio")
+theme_override_constants/separation = 50
+
+[node name="Control" type="Control" parent="Panel2/ScrollContainer/playerlist"]
+layout_mode = 2
+
+[node name="player" parent="Panel2/ScrollContainer/playerlist" instance=ExtResource("2_5xvo0")]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_w6qwf")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 32.0
+offset_top = 45.0
+offset_right = 452.0
+offset_bottom = 103.0
+theme_override_fonts/font = SubResource("SystemFont_46jfh")
+theme_override_font_sizes/font_size = 20
+text = "Congratulation"
+horizontal_alignment = 1

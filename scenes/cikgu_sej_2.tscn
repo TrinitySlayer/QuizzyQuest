@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://3r7i0vjxkohv"]
+
+[ext_resource type="Script" path="res://scenes/CikguSej2.gd" id="1_15rvd"]
+[ext_resource type="Texture2D" uid="uid://cjlbv0qyfi8ps" path="res://art/characters/Npc6.png" id="2_ruki0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_py1rg"]
+atlas = ExtResource("2_ruki0")
+region = Rect2(0, 448, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85a6y"]
+atlas = ExtResource("2_ruki0")
+region = Rect2(64, 448, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qaelg"]
+atlas = ExtResource("2_ruki0")
+region = Rect2(128, 448, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6lpk"]
+atlas = ExtResource("2_ruki0")
+region = Rect2(192, 448, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdf5y"]
+atlas = ExtResource("2_ruki0")
+region = Rect2(256, 448, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4ym7"]
+atlas = ExtResource("2_ruki0")
+region = Rect2(320, 448, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10o2w"]
+atlas = ExtResource("2_ruki0")
+region = Rect2(384, 448, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8mnk"]
+atlas = ExtResource("2_ruki0")
+region = Rect2(448, 448, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_53kd7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_py1rg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85a6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qaelg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6lpk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdf5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4ym7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10o2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8mnk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7s0mw"]
+
+[node name="CikguSej2" type="CharacterBody2D"]
+script = ExtResource("1_15rvd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(0.460938, 0.511719)
+sprite_frames = SubResource("SpriteFrames_53kd7")
+animation = &"idle"
+frame_progress = 0.137367
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 5
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_7s0mw")

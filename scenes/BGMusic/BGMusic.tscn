@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7igan1mltjm"]
+
+[ext_resource type="AudioStream" uid="uid://cpb610yv368tb" path="res://music/BGMusic.mp3" id="1_wy8km"]
+
+[node name="BgMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_wy8km")

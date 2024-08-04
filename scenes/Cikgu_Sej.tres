@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://d1wx4vgm444p4"]
+
+[ext_resource type="Script" path="res://scenes/BaseEnemy2.gd" id="1_ixxqi"]
+[ext_resource type="Texture2D" uid="uid://cgwe7r2jer5rf" path="res://art/characters/Shadow3.png" id="2_l3c11"]
+
+[resource]
+script = ExtResource("1_ixxqi")
+name = "Cikgu Sejarah"
+texture = ExtResource("2_l3c11")
+health = 1
+damage = 1

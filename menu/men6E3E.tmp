@@ -1,0 +1,105 @@
+[gd_scene load_steps=11 format=3 uid="uid://t8b1kseevpeq"]
+
+[ext_resource type="Script" path="res://menu/menu.gd" id="1_3aucg"]
+[ext_resource type="Theme" uid="uid://c34byr3g3y70o" path="res://quitButton/playButton.tres" id="2_62d2c"]
+[ext_resource type="Texture2D" uid="uid://4hv4ei4rei5l" path="res://menu/Harvest BG.png" id="2_4581k"]
+[ext_resource type="Shader" path="res://menu/menu.gdshader" id="2_flrgs"]
+[ext_resource type="Texture2D" uid="uid://dtrulehxrkl6g" path="res://assets/quizzyquestlogo.png" id="3_uhhpa"]
+[ext_resource type="Texture2D" uid="uid://bs75nrnqm5lgm" path="res://quitButton/table.png" id="4_miulc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bhwnj"]
+shader = ExtResource("2_flrgs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tf0w1"]
+texture = ExtResource("4_miulc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cm7yp"]
+texture = ExtResource("4_miulc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sss8b"]
+texture = ExtResource("4_miulc")
+
+[node name="menu" type="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(150, 150)
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 12.03
+script = ExtResource("1_3aucg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_bhwnj")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4581k")
+expand_mode = 5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.494
+anchor_top = 0.395
+anchor_right = 0.494
+anchor_bottom = 0.395
+offset_left = -85.57
+offset_top = -84.38
+offset_right = 84.43
+offset_bottom = 84.62
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("3_uhhpa")
+expand_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.473
+anchor_right = 0.5
+anchor_bottom = 0.473
+offset_left = -36.0
+offset_top = 20.388
+offset_right = 36.0
+offset_bottom = 72.388
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="play" type="Button" parent="VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme = ExtResource("2_62d2c")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_tf0w1")
+text = "Play"
+
+[node name="leaderboard" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_62d2c")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_cm7yp")
+text = "Leaderboard"
+
+[node name="quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_62d2c")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_sss8b")
+text = "Quit"
+
+[connection signal="button_down" from="VBoxContainer/play" to="." method="_on_play_button_down"]
+[connection signal="button_down" from="VBoxContainer/leaderboard" to="." method="_on_leaderboard_button_down"]
+[connection signal="button_down" from="VBoxContainer/quit" to="." method="_on_quit_button_down"]

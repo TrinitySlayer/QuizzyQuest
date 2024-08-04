@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://t2118smu8tio"
+path="res://.godot/imported/Wrong Doors - Final_six_win.mp3-c38d40c596e6747f23a9a6790c119216.mp3str"
+
+[deps]
+
+source_file="res://music/Wrong Doors - Final_six_win.mp3"
+dest_files=["res://.godot/imported/Wrong Doors - Final_six_win.mp3-c38d40c596e6747f23a9a6790c119216.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

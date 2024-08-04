@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://cxtabt2j1h37c"]
+
+[ext_resource type="Script" path="res://scenes/cikgu_sej.gd" id="1_1iaca"]
+[ext_resource type="Texture2D" uid="uid://bq1coyanchq8m" path="res://art/characters/CikguSej.png" id="1_1lcse"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3aih"]
+atlas = ExtResource("1_1lcse")
+region = Rect2(128, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1smv"]
+atlas = ExtResource("1_1lcse")
+region = Rect2(192, 1280, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_swox4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3aih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1smv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_suarb"]
+
+[node name="CikguSej" type="CharacterBody2D"]
+script = ExtResource("1_1iaca")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(0.460938, 0.511719)
+sprite_frames = SubResource("SpriteFrames_swox4")
+animation = &"idle"
+frame_progress = 0.407005
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 5
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_suarb")

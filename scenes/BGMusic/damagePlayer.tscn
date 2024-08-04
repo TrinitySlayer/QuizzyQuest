@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://kum3spbaswmq"]
+
+[ext_resource type="AudioStream" uid="uid://ds32l6wo0oej2" path="res://assets/Action RPG Resources/Music and Sounds/Hit.wav" id="1_fvcbv"]
+
+[node name="DamagePlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_fvcbv")

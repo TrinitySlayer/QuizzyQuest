@@ -1,0 +1,243 @@
+[gd_scene load_steps=12 format=3 uid="uid://pnbmyqw6bdlh"]
+
+[ext_resource type="Script" path="res://scenes/Battle.gd" id="1_y77k5"]
+[ext_resource type="Resource" uid="uid://dvfn6jcsvw2nj" path="res://scenes/Cikgu1.tres" id="2_dn178"]
+[ext_resource type="Texture2D" uid="uid://px5sqmgqotrq" path="res://art/background/bg_all.png" id="2_wj55c"]
+[ext_resource type="Texture2D" uid="uid://2vothtkby40f" path="res://art/characters/npc1.png" id="3_66lhl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hksr"]
+bg_color = Color(0.819608, 0.286275, 0.243137, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y84w6"]
+bg_color = Color(0.321569, 0.576471, 0.337255, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.156863, 0.447059, 0.164706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2nr4"]
+bg_color = Color(0, 0, 0, 0.647059)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tmxub"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8crni"]
+bg_color = Color(0.243137, 0.776471, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_we82c"]
+bg_color = Color(0.243137, 0.776471, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.647059, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1v3pe"]
+bg_color = Color(0, 0, 0, 0.792157)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.337255, 0.337255, 0.337255, 1)
+
+[node name="Battle" type="Control"]
+layout_mode = 3
+anchor_right = 0.417
+anchor_bottom = 0.371
+offset_right = -0.384033
+offset_bottom = -0.40802
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y77k5")
+enemy = ExtResource("2_dn178")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_wj55c")
+
+[node name="Cikgu1Container" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 135.0
+offset_top = 23.5
+offset_right = 345.0
+offset_bottom = 216.5
+
+[node name="ProgressBar" type="ProgressBar" parent="Cikgu1Container"]
+custom_minimum_size = Vector2(0, 23)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_4hksr")
+theme_override_styles/fill = SubResource("StyleBoxFlat_y84w6")
+max_value = 1.0
+step = 1.0
+value = 1.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Cikgu1Container/ProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "HP : 1/1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cikgu1" type="TextureRect" parent="Cikgu1Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_66lhl")
+
+[node name="PlayerPanel" type="Panel" parent="."]
+layout_mode = 1
+offset_top = 199.0
+offset_right = 480.0
+offset_bottom = 240.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_m2nr4")
+
+[node name="PlayerData" type="HBoxContainer" parent="PlayerPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.169
+anchor_top = 0.481
+anchor_right = 0.169
+anchor_bottom = 0.481
+offset_left = -81.12
+offset_top = -19.721
+offset_right = 73.88
+offset_bottom = 20.279
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PlayerPanel/PlayerData"]
+layout_mode = 2
+text = "PLAYER"
+
+[node name="ProgressBar" type="ProgressBar" parent="PlayerPanel/PlayerData"]
+clip_contents = true
+custom_minimum_size = Vector2(80, 23)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_4hksr")
+theme_override_styles/fill = SubResource("StyleBoxFlat_y84w6")
+max_value = 2.0
+step = 1.0
+value = 2.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="PlayerPanel/PlayerData/ProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "HP : 2/2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ActionPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 159.0
+offset_top = 202.0
+offset_right = 477.0
+offset_bottom = 237.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Actions" type="HBoxContainer" parent="ActionPanel"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 315.0
+offset_bottom = 33.0
+theme_override_constants/separation = 17
+alignment = 1
+
+[node name="Jawapan1" type="Button" parent="ActionPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_tmxub")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8crni")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_we82c")
+text = " JAWAPAN 1 "
+
+[node name="Jawapan2" type="Button" parent="ActionPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_tmxub")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8crni")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_we82c")
+text = " JAWAPAN 2 "
+
+[node name="Lari" type="Button" parent="ActionPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_tmxub")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8crni")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_we82c")
+text = " LARI "
+
+[node name="TextBox" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.004
+anchor_bottom = 1.004
+offset_left = 3.0
+offset_top = -63.96
+offset_right = 476.0
+offset_bottom = -6.95999
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1v3pe")
+
+[node name="Label" type="Label" parent="TextBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.002
+anchor_top = 0.984
+anchor_right = 0.002
+anchor_bottom = 0.984
+offset_left = 0.054
+offset_top = -55.088
+offset_right = 471.054
+offset_bottom = -0.0880013
+text = "Ah! seorang lelaki pelik menyerang kamu! jawab soalan dia 
+untuk menyelamatkan diri kamu!"
+
+[node name="Ticker" type="Label" parent="TextBox"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -25.0
+offset_right = -6.0
+offset_bottom = -2.0
+grow_horizontal = 0
+grow_vertical = 0
+text = ">"
+
+[connection signal="pressed" from="ActionPanel/Actions/Lari" to="." method="_on_lari_pressed"]

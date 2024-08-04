@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bbbu41ygxycmw"]
+
+[ext_resource type="Script" path="res://scenes/BaseEnemy1.gd" id="1_hx8oe"]
+[ext_resource type="Texture2D" uid="uid://1muy5au3u3fb" path="res://art/characters/Shadow2.png" id="2_ddl1c"]
+
+[resource]
+script = ExtResource("1_hx8oe")
+name = "Cikgu Agama"
+texture = ExtResource("2_ddl1c")
+health = 1
+damage = 1

@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://cqeok1ac5sje4"]
+
+[ext_resource type="Script" path="res://scenes/cikgu_agama.gd" id="1_bm6nb"]
+[ext_resource type="Texture2D" uid="uid://bkuju73bbcjnx" path="res://art/characters/CikguAgama.png" id="1_n1ay5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1es4r"]
+atlas = ExtResource("1_n1ay5")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yaiew"]
+atlas = ExtResource("1_n1ay5")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3rpk"]
+atlas = ExtResource("1_n1ay5")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkhkk"]
+atlas = ExtResource("1_n1ay5")
+region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g212c"]
+atlas = ExtResource("1_n1ay5")
+region = Rect2(256, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5qkl"]
+atlas = ExtResource("1_n1ay5")
+region = Rect2(320, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wosdd"]
+atlas = ExtResource("1_n1ay5")
+region = Rect2(384, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ngijx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1es4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yaiew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3rpk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkhkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g212c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5qkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wosdd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8tibx"]
+
+[node name="CikguAgama" type="CharacterBody2D"]
+script = ExtResource("1_bm6nb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(0.460938, 0.511719)
+sprite_frames = SubResource("SpriteFrames_ngijx")
+animation = &"idle"
+frame_progress = 0.215949
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 5
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_8tibx")

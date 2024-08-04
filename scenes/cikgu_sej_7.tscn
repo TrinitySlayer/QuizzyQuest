@@ -1,0 +1,141 @@
+[gd_scene load_steps=21 format=3 uid="uid://w7m3bl14456l"]
+
+[ext_resource type="Script" path="res://scenes/cikgu_sej_7.gd" id="1_04e2k"]
+[ext_resource type="Texture2D" uid="uid://dpi4hyey3l6un" path="res://art/characters/Npc11.png" id="2_x5aee"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idg56"]
+atlas = ExtResource("2_x5aee")
+region = Rect2(320, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pc1st"]
+atlas = ExtResource("2_x5aee")
+region = Rect2(320, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e57ns"]
+atlas = ExtResource("2_x5aee")
+region = Rect2(320, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kve2s"]
+atlas = ExtResource("2_x5aee")
+region = Rect2(320, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6t3b"]
+atlas = ExtResource("2_x5aee")
+region = Rect2(320, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56hlb"]
+atlas = ExtResource("2_x5aee")
+region = Rect2(320, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3k3ir"]
+atlas = ExtResource("2_x5aee")
+region = Rect2(256, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6v56"]
+atlas = ExtResource("2_x5aee")
+region = Rect2(192, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jmax"]
+atlas = ExtResource("2_x5aee")
+region = Rect2(128, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vy0ov"]
+atlas = ExtResource("2_x5aee")
+region = Rect2(64, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkg65"]
+atlas = ExtResource("2_x5aee")
+region = Rect2(0, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgj2x"]
+atlas = ExtResource("2_x5aee")
+region = Rect2(64, 896, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7slsl"]
+atlas = ExtResource("2_x5aee")
+region = Rect2(128, 832, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vytxm"]
+atlas = ExtResource("2_x5aee")
+region = Rect2(192, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71owy"]
+atlas = ExtResource("2_x5aee")
+region = Rect2(256, 960, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ducus"]
+atlas = ExtResource("2_x5aee")
+region = Rect2(320, 960, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l100a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idg56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pc1st")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e57ns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kve2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6t3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56hlb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3k3ir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6v56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jmax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vy0ov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkg65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgj2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7slsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vytxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71owy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ducus")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_54g5u"]
+
+[node name="cikgu_sej_7" type="CharacterBody2D"]
+script = ExtResource("1_04e2k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(0.460938, 0.511719)
+sprite_frames = SubResource("SpriteFrames_l100a")
+animation = &"idle"
+frame_progress = 0.261237
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 5
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_54g5u")

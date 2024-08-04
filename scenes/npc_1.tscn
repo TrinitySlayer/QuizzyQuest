@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://cs0gvxlkaatlf"]
+
+[ext_resource type="Script" path="res://scenes/npc_1.gd" id="1_7krst"]
+[ext_resource type="Texture2D" uid="uid://now0ewmcncdv" path="res://art/characters/Mahmi.png" id="2_oam6t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qxds"]
+atlas = ExtResource("2_oam6t")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alhce"]
+atlas = ExtResource("2_oam6t")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3a80e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qxds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alhce")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qe15i"]
+radius = 13.0384
+
+[node name="npc1" type="CharacterBody2D"]
+script = ExtResource("1_7krst")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(219, 65)
+scale = Vector2(0.521485, 0.522461)
+sprite_frames = SubResource("SpriteFrames_3a80e")
+animation = &"idle"
+frame_progress = 0.937975
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(219, 69)
+shape = SubResource("CircleShape2D_qe15i")

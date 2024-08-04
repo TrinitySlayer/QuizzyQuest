@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cmn7t5dm15xer"]
+
+[ext_resource type="Script" path="res://scenes/BaseEnemy6.gd" id="1_7yfsm"]
+[ext_resource type="Texture2D" uid="uid://cawke4ee7r8qe" path="res://art/characters/Shadow6.png" id="2_x6fjm"]
+
+[resource]
+script = ExtResource("1_7yfsm")
+name = "Cikgu Sejarah 4"
+texture = ExtResource("2_x6fjm")
+health = 1
+damage = 1

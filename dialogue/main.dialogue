@@ -1,0 +1,18 @@
+
+~ intro
+
+Unknown: [[Hello|Hai|Apa khabar]][speed=0.1]
+
+- Oh, hai! Awak siapa?
+- Bye => END
+Unknown: Saya Sarah.  Selamat Datang ke Hutan NusanWira.
+Unknown: Macam mana awak boleh berada di sini?
+- Saya pun tak tahu.
+Unknown: ...
+- Bagaimana cara untuk keluar dari sini?
+Unknown: Itu senang sahaja, awak perlu tewaskan ke semua penjaga yang berada dalam pulau ini.
+- Tewaskan?
+Unknown: Ya. untuk keluar dari pulau ini, awak perlu menewaskan setiap  penjaga yang ada.
+- Kalau macam tu, Baiklah.
+
+=> END

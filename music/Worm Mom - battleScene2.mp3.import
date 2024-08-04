@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8mxs2e1j3hg4"
+path="res://.godot/imported/Worm Mom - battleScene2.mp3-2f62412a22127de093900f06d542268f.mp3str"
+
+[deps]
+
+source_file="res://music/Worm Mom - battleScene2.mp3"
+dest_files=["res://.godot/imported/Worm Mom - battleScene2.mp3-2f62412a22127de093900f06d542268f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

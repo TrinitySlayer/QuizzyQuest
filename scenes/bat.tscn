@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://526b4ax5sogd"]
+
+[ext_resource type="Script" path="res://bat.gd" id="1_80nk2"]
+[ext_resource type="Texture2D" uid="uid://d4gwurthxt45" path="res://art/characters/bat.png" id="2_0jw6x"]
+[ext_resource type="PackedScene" uid="uid://rcjyvctj1brk" path="res://scenes/wander_3.tscn" id="3_hu4te"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qi43"]
+atlas = ExtResource("2_0jw6x")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xp6pb"]
+atlas = ExtResource("2_0jw6x")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qh1n7"]
+atlas = ExtResource("2_0jw6x")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3je05"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qi43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xp6pb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qh1n7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[node name="bat" type="CharacterBody2D" node_paths=PackedStringArray("wander_direction")]
+script = ExtResource("1_80nk2")
+wander_direction = NodePath("wander3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.453125, 0.46875)
+sprite_frames = SubResource("SpriteFrames_3je05")
+animation = &"idle"
+frame_progress = 0.490594
+offset = Vector2(0, -5)
+
+[node name="wander3" parent="." instance=ExtResource("3_hu4te")]
+group_name = "FirstBat"

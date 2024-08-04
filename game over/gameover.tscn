@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=3 uid="uid://curtuti3wes6w"]
+
+[ext_resource type="Script" path="res://game over/gameover.gd" id="1_i2fgk"]
+[ext_resource type="FontFile" uid="uid://1lx2fm5npoav" path="res://assets/typeface-mario-world-pixel-font/TypefaceMarioWorldPixelFilledRegular-rgVMx.ttf" id="2_7qicc"]
+[ext_resource type="Texture2D" uid="uid://xvoo01381pn5" path="res://art/characters/horned-skull-head-pixel-art-style_475147-1389-removebg-preview.png" id="2_ugagt"]
+[ext_resource type="FontFile" uid="uid://b3tmxfxjmy3mp" path="res://assets/typeface-mario-world-pixel-font/TypefaceMarioWorldPixelFilledRegular-Yz84q.otf" id="3_ww3s4"]
+[ext_resource type="AudioStream" uid="uid://byxeln3y5u2mb" path="res://music/kl-peach-game-over-ii-135684.mp3" id="4_nsw2e"]
+
+[sub_resource type="CurveTexture" id="CurveTexture_yaqfa"]
+texture_mode = 1
+
+[node name="Gameover" type="CanvasLayer"]
+script = ExtResource("1_i2fgk")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = SubResource("CurveTexture_yaqfa")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 454.0
+offset_top = 112.0
+offset_right = -199.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ugagt")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.5
+offset_top = -34.0
+offset_right = 256.5
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_7qicc")
+theme_override_font_sizes/font_size = 30
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = 36.0
+offset_right = 98.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 15
+
+[node name="quit" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ww3s4")
+theme_override_font_sizes/font_size = 10
+text = "Exit Game
+"
+
+[node name="retry" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ww3s4")
+theme_override_font_sizes/font_size = 10
+text = "Play again"
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_nsw2e")
+autoplay = true
+
+[connection signal="pressed" from="HBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="HBoxContainer/retry" to="." method="_on_retry_pressed"]

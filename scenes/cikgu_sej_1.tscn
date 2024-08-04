@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://ds7glsl1a0e8i"]
+
+[ext_resource type="Script" path="res://scenes/CikguSej1.gd" id="1_352ob"]
+[ext_resource type="Texture2D" uid="uid://cpt2j3qyb181q" path="res://art/characters/Npc5.png" id="2_a1714"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjg26"]
+atlas = ExtResource("2_a1714")
+region = Rect2(0, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a1m4"]
+atlas = ExtResource("2_a1714")
+region = Rect2(64, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mtn4"]
+atlas = ExtResource("2_a1714")
+region = Rect2(128, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_id4kk"]
+atlas = ExtResource("2_a1714")
+region = Rect2(192, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsu1f"]
+atlas = ExtResource("2_a1714")
+region = Rect2(256, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b41ob"]
+atlas = ExtResource("2_a1714")
+region = Rect2(320, 768, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ao5v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjg26")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0a1m4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mtn4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_id4kk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsu1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b41ob")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mqsjs"]
+
+[node name="CikguSej1" type="CharacterBody2D"]
+script = ExtResource("1_352ob")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(0.460938, 0.511719)
+sprite_frames = SubResource("SpriteFrames_4ao5v")
+animation = &"idle"
+frame_progress = 0.150716
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 5
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_mqsjs")

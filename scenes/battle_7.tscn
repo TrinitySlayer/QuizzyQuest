@@ -1,0 +1,398 @@
+[gd_scene load_steps=24 format=3 uid="uid://d1g32wb5fmnu7"]
+
+[ext_resource type="Script" path="res://scenes/battle_7.gd" id="1_0f6r0"]
+[ext_resource type="Resource" uid="uid://dx6kos8y1rwc2" path="res://scenes/Cikgu_Sej_5.tres" id="2_gsnn8"]
+[ext_resource type="Texture2D" uid="uid://bx2trigi7hslp" path="res://art/characters/Shadow8.png" id="2_gxmyh"]
+[ext_resource type="Texture2D" uid="uid://clnsfs784dcyb" path="res://art/background/scary-pixel-art-game-location-haunted-forest-with-graves_952778-5459.png" id="3_doo65"]
+[ext_resource type="Script" path="res://scenes/name.gd" id="5_3g8u7"]
+[ext_resource type="AudioStream" uid="uid://rp5r4b0hu5wy" path="res://music/Enter Exit - battleScene.mp3" id="6_tv2qq"]
+[ext_resource type="AudioStream" uid="uid://ds32l6wo0oej2" path="res://assets/Action RPG Resources/Music and Sounds/Hit.wav" id="7_qbywk"]
+[ext_resource type="AudioStream" uid="uid://oshh67mxw06d" path="res://assets/Action RPG Resources/Music and Sounds/EnemyDie.wav" id="8_aiwkh"]
+[ext_resource type="AudioStream" uid="uid://cg5jtitd0e4ms" path="res://assets/Action RPG Resources/Music and Sounds/Menu Select.wav" id="9_hrynx"]
+[ext_resource type="AudioStream" uid="uid://cl0y82ryhpdly" path="res://music/Monster, Yell, Distorted Howl And Screech - Sound Effect HD.mp3" id="10_qcn2v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cfy6t"]
+bg_color = Color(0.819608, 0.286275, 0.243137, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjoaf"]
+bg_color = Color(0.321569, 0.576471, 0.337255, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.156863, 0.447059, 0.164706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tqcof"]
+bg_color = Color(0, 0, 0, 0.647059)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ygon"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cxcdc"]
+bg_color = Color(0.243137, 0.776471, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6kkya"]
+bg_color = Color(0.243137, 0.776471, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.647059, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu2f1"]
+bg_color = Color(0, 0, 0, 0.792157)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.337255, 0.337255, 0.337255, 1)
+
+[sub_resource type="Animation" id="Animation_ihshx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CikguSej5Container/CikguSej5:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CikguSej6Container/CikguSej6:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0ueo6"]
+resource_name = "enemy_attack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CikguSej5Container/CikguSej5:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CikguSej6Container/CikguSej6:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gultc"]
+resource_name = "enemy_damaged"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CikguSej5Container/CikguSej5:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.521569), Color(1, 1, 1, 1), Color(1, 1, 1, 0.313726)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CikguSej6Container/CikguSej6:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.32549), Color(1, 1, 1, 1), Color(1, 1, 1, 0.345098), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_byk8o"]
+resource_name = "enemy_died"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CikguSej5Container/CikguSej5:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CikguSej6Container/CikguSej6:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fmkl1"]
+resource_name = "shake"
+length = 0.5
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gnvmd"]
+_data = {
+"RESET": SubResource("Animation_ihshx"),
+"enemy_attack": SubResource("Animation_0ueo6"),
+"enemy_damaged": SubResource("Animation_gultc"),
+"enemy_died": SubResource("Animation_byk8o"),
+"shake": SubResource("Animation_fmkl1")
+}
+
+[node name="Battle_7" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0f6r0")
+enemy = ExtResource("2_gsnn8")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.631373, 0.160784, 0.172549, 1)
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 252.0
+texture = ExtResource("3_doo65")
+expand_mode = 1
+
+[node name="CikguSej5Container" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 23.5
+offset_right = 345.0
+offset_bottom = 216.5
+
+[node name="ProgressBar" type="ProgressBar" parent="CikguSej5Container"]
+custom_minimum_size = Vector2(0, 23)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_cfy6t")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hjoaf")
+max_value = 1.0
+step = 1.0
+value = 1.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="CikguSej5Container/ProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "HP : 1/1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CikguSej5" type="TextureRect" parent="CikguSej5Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_gxmyh")
+
+[node name="PlayerPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_top = 199.0
+offset_right = 480.0
+offset_bottom = 240.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tqcof")
+
+[node name="PlayerData" type="HBoxContainer" parent="PlayerPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.169
+anchor_top = 0.481
+anchor_right = 0.169
+anchor_bottom = 0.481
+offset_left = -81.12
+offset_top = -19.721
+offset_right = 73.88
+offset_bottom = 20.279
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PlayerPanel/PlayerData"]
+layout_mode = 2
+script = ExtResource("5_3g8u7")
+
+[node name="ProgressBar" type="ProgressBar" parent="PlayerPanel/PlayerData"]
+clip_contents = true
+custom_minimum_size = Vector2(80, 23)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_cfy6t")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hjoaf")
+max_value = 2.0
+step = 1.0
+value = 2.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="PlayerPanel/PlayerData/ProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "HP : 2/2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ActionPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 159.0
+offset_top = 202.0
+offset_right = 477.0
+offset_bottom = 237.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Actions" type="HBoxContainer" parent="ActionPanel"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 315.0
+offset_bottom = 33.0
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Jawapan1" type="Button" parent="ActionPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ygon")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cxcdc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6kkya")
+text = "Melanau"
+
+[node name="Jawapan2" type="Button" parent="ActionPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ygon")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cxcdc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6kkya")
+text = "Iban"
+
+[node name="Jawapan3" type="Button" parent="ActionPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ygon")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cxcdc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6kkya")
+text = "Kedayan"
+
+[node name="TextBox" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 476.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fu2f1")
+
+[node name="Label" type="Label" parent="TextBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.006
+anchor_top = -3.105
+anchor_right = -0.006
+anchor_bottom = -3.105
+offset_left = 3.838
+offset_top = 177.985
+offset_right = 474.838
+offset_bottom = 232.985
+theme_override_font_sizes/font_size = 10
+text = "Ah!  Ada penjaga  menyerang kamu! Cepat kalahkan dia."
+
+[node name="Ticker" type="Label" parent="TextBox"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -25.0
+offset_right = -6.0
+offset_bottom = -2.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "..."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gnvmd")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_tv2qq")
+autoplay = true
+
+[node name="damagePlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_qbywk")
+
+[node name="damageEnemy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_aiwkh")
+
+[node name="clickBtn" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_hrynx")
+autoplay = true
+
+[node name="enemyDie" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_qcn2v")
+
+[connection signal="mouse_entered" from="ActionPanel/Actions/Jawapan1" to="." method="_on_jawapan_1_mouse_entered"]
+[connection signal="pressed" from="ActionPanel/Actions/Jawapan1" to="." method="_on_jawapan_1_pressed"]
+[connection signal="mouse_entered" from="ActionPanel/Actions/Jawapan2" to="." method="_on_jawapan_2_mouse_entered"]
+[connection signal="pressed" from="ActionPanel/Actions/Jawapan2" to="." method="_on_jawapan_2_pressed"]
+[connection signal="mouse_entered" from="ActionPanel/Actions/Jawapan3" to="." method="_on_jawapan_3_mouse_entered"]
+[connection signal="pressed" from="ActionPanel/Actions/Jawapan3" to="." method="_on_jawapan_3_pressed"]
